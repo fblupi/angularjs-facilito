@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ToDoList">
+<head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="angular-local-storage.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="ToDoController">
+    <ul>
+        <li ng-repeat="todo in todos">
+            {{todo.description}} - {{todo.date | date: 'short'}}
+        </li>
+    </ul>
+    <form ng-submit="addTodo()">
+        <input type="text" ng-model="newTodo.description">
+        <input type="datetime-local" ng-model="newTodo.date">
+        <input type="submit" value="Send">
+    </form>
+    <button ng-click="clean()">Clean</button>
+</body>
+</html>
