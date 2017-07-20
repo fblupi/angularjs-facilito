@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="MyFirstApp">
+<head>
+    <meta charset="utf-8">
+    <title>Dependency Injection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="FirstController">
+    <input type="text" ng-model="newComment.comment">
+    <br>
+    <input type="text" ng-model="newComment.username">
+    <br>
+    <button ng-click="addComment()">Add Comment</button>
+    <h3>Comments</h3>
+    <ul>
+        <li ng-repeat="comment in comments">
+            {{comment.comment}} - <strong>{{comment.username}}</strong>
+        </li>
+    </ul>
+</body>
+</html>
